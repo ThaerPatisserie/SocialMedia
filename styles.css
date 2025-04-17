@@ -22,7 +22,7 @@ body {
 }
 
 .container {
-    margin-top: 100px; /* מרווח מעל הקונטיינר (מתחת ללוגו) */
+    margin-top: 90px; /* מרווח מעל הקונטיינר (מתחת ללוגו) */
     width: 90%;
     max-width: 800px;
     padding: 20px;
@@ -57,7 +57,7 @@ body {
 /* עיצוב לוגו */
 .logo-container {
     position: absolute;
-    top: 20px;
+    top: 10px;
     left: 0;
     right: 0;
     display: flex;
