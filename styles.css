@@ -17,26 +17,28 @@ body {
     color: rgb(211, 186, 124);
     transition: background 1s ease-in-out;
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* שינוי חשוב - מערך עמודה */
+    justify-content: flex-start; /* מתחיל מהחלק העליון */
     align-items: center;
+    padding-top: 150px; /* מרווח למעלה עבור הלוגו */
 }
 
 .container {
-    margin-top: 90px; /* מרווח מעל הקונטיינר (מתחת ללוגו) */
     width: 90%;
     max-width: 800px;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 15px;
+    margin-top: 20px; /* מרווח קטן יותר כי יש לנו padding-top ב-body */
 }
 
-/* עיצוב מלבנים כקישורים */
+/* עיצוב מלבנים */
 .box {
     width: 80%;
     max-width: 300px;
     height: 15vh;
     min-height: 60px;
-    background-color: black(255, 255, 255, 0.9);
+    background-color: rgba(0, 0, 0, 0.8); /* תוקן - היה כתוב black במקום rgba */
     margin: 10px auto;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -44,74 +46,66 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-decoration: none; /* מסיר קו תחתון מקישורים */
-    color: rgb(211, 186, 124); /* צבע טקסט כהה */
+    text-decoration: none;
+    color: rgb(211, 186, 124);
     font-weight: bolder;
+    border: 1px solid rgb(211, 186, 124); /* הוספתי מסגרת זהב */
 }
 
 .box:hover {
     transform: translateY(-5px);
-    background-color: wheat (255, 255, 255, 1); /* רקע לבן מלא במעבר עכבר */
+    background-color: rgba(0, 0, 0, 0.9); /* תוקן - היה כתוב wheat במקום rgba */
 }
 
 /* עיצוב לוגו */
 .logo-container {
-    position: absolute;
+    position: fixed; /* שינוי מ-absolute ל-fixed */
     top: 10px;
-    left: 0;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: center;
-    z-index: 10; /* מוודא שהלוגו יהיה מעל כל האלמנטים */
-    background-color: rgba(0, 0, 0, 0.6); /* רקע שחור עם 70% שקיפות */
-    padding: 10px 0; /* ריווח פנימי */
-    border-radius: 30px; /* פינות מעוגלות בתחתית */
-    backdrop-filter: blur(1px); /* אפקט טשטוש עדין (אופציונלי) */
-    margin-bottom: 30px; /* מרווח קבוע מתחת ללוגו */
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    border-radius: 30px;
+    backdrop-filter: blur(1px);
+    width: auto;
+    max-width: 90%;
 }
 
 .logo {
-    width: 200px; /* גודל הלוגו */
+    width: 200px; /* הקטנתי מעט את הגודל */
     height: auto;
-    opacity: 1; /* שקיפות עדינה */
     transition: transform 0.3s;
-    
 }
 
 .logo:hover {
-    transform: scale(1.05); /* אנימציה קטנה בלחיצה */
+    transform: scale(1.05);
 }
 
-/* עיצוב אייקונים וטקסט במלבנים */
-.box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px; /* רווח קבוע בין אייקון לטקסט */
-    padding: 0 20px; /* ריווח פנימי בצדדים */
-}
-
+/* עיצוב אייקונים וטקסט */
 .box i {
-    font-size: 24px; /* גודל אייקון */
-    flex-shrink: 0; /* מונע כיווץ האייקון */
+    font-size: 24px;
+    flex-shrink: 0;
+    margin-left: 10px; /* רווח בין האייקון לטקסט */
 }
 
 .box .text {
-    font-size: 18px; /* גודל טקסט */
+    font-size: 18px;
 }
 
 .fa-waze {
-    color: rgb(211, 186, 124); /* צבע Waze רשמי */
+    color: rgb(211, 186, 124);
     font-size: 24px;
     transition: transform 0.3s;
 }
 
 .fa-waze:hover {
-    transform: scale(1.1); /* אנימציה קטנה בלחיצה */
+    transform: scale(1.1);
 }
 
-
-/* מדיה-קווריז לטאבלטים וסמארטפונים */
+/* מדיה-קווריז */
 @media (max-width: 1024px) {
     .box {
         width: 90%;
@@ -120,32 +114,37 @@ body {
 }
 
 @media (max-width: 600px) {
-
+    body {
+        padding-top: 120px; /* פחות מרווח למעלה בנייד */
+    }
+    
     .logo-container {
-        top: 10px;
-        padding: 8px 0;
-        margin-bottom: 20px; /* מרווח קטן יותר בנייד */
+        top: 5px;
+        padding: 8px 15px;
     }
-
+    
+    .logo {
+        width: 150px;
+    }
+    
     .container {
-        margin-top: 100px;
+        margin-top: 10px;
     }
+    
     .box {
         width: 95%;
         height: 10vh;
         min-height: 50px;
     }
+    
     h1 {
         font-size: 1.5rem;
     }
-
-    .box {
-        gap: 10px;
-        padding: 0 15px;
-    }
+    
     .box i {
         font-size: 20px;
     }
+    
     .box .text {
         font-size: 16px;
     }
