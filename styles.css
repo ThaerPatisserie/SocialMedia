@@ -1,0 +1,152 @@
+/* עיצוב כללי */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-image: url('coruaso.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+    color: rgb(211, 186, 124);
+    transition: background 1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    margin-top: 100px; /* מרווח מעל הקונטיינר (מתחת ללוגו) */
+    width: 90%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+}
+
+/* עיצוב מלבנים כקישורים */
+.box {
+    width: 80%;
+    max-width: 300px;
+    height: 15vh;
+    min-height: 60px;
+    background-color: black(255, 255, 255, 0.9);
+    margin: 10px auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; /* מסיר קו תחתון מקישורים */
+    color: rgb(211, 186, 124); /* צבע טקסט כהה */
+    font-weight: bolder;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    background-color: wheat (255, 255, 255, 1); /* רקע לבן מלא במעבר עכבר */
+}
+
+/* עיצוב לוגו */
+.logo-container {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 10; /* מוודא שהלוגו יהיה מעל כל האלמנטים */
+    background-color: rgba(0, 0, 0, 0.6); /* רקע שחור עם 70% שקיפות */
+    padding: 10px 0; /* ריווח פנימי */
+    border-radius: 30px; /* פינות מעוגלות בתחתית */
+    backdrop-filter: blur(1px); /* אפקט טשטוש עדין (אופציונלי) */
+    margin-bottom: 30px; /* מרווח קבוע מתחת ללוגו */
+}
+
+.logo {
+    width: 200px; /* גודל הלוגו */
+    height: auto;
+    opacity: 1; /* שקיפות עדינה */
+    transition: transform 0.3s;
+    
+}
+
+.logo:hover {
+    transform: scale(1.05); /* אנימציה קטנה בלחיצה */
+}
+
+/* עיצוב אייקונים וטקסט במלבנים */
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* רווח קבוע בין אייקון לטקסט */
+    padding: 0 20px; /* ריווח פנימי בצדדים */
+}
+
+.box i {
+    font-size: 24px; /* גודל אייקון */
+    flex-shrink: 0; /* מונע כיווץ האייקון */
+}
+
+.box .text {
+    font-size: 18px; /* גודל טקסט */
+}
+
+.fa-waze {
+    color: rgb(211, 186, 124); /* צבע Waze רשמי */
+    font-size: 24px;
+    transition: transform 0.3s;
+}
+
+.fa-waze:hover {
+    transform: scale(1.1); /* אנימציה קטנה בלחיצה */
+}
+
+
+/* מדיה-קווריז לטאבלטים וסמארטפונים */
+@media (max-width: 1024px) {
+    .box {
+        width: 90%;
+        height: 12vh;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .logo-container {
+        top: 10px;
+        padding: 8px 0;
+        margin-bottom: 20px; /* מרווח קטן יותר בנייד */
+    }
+
+    .container {
+        margin-top: 100px;
+    }
+    .box {
+        width: 95%;
+        height: 10vh;
+        min-height: 50px;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .box {
+        gap: 10px;
+        padding: 0 15px;
+    }
+    .box i {
+        font-size: 20px;
+    }
+    .box .text {
+        font-size: 16px;
+    }
+}
