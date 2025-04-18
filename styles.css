@@ -27,7 +27,7 @@ body {
     width: 90%;
     max-width: 800px;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 15px;
     margin-top: 20px; /* מרווח קטן יותר כי יש לנו padding-top ב-body */
 }
@@ -38,7 +38,7 @@ body {
     max-width: 300px;
     height: 15vh;
     min-height: 60px;
-    background-color: rgba(0, 0, 0, 0.8); /* תוקן - היה כתוב black במקום rgba */
+    background-color: rgba(0, 0, 0, 0.2); /* תוקן - היה כתוב black במקום rgba */
     margin: 10px auto;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
